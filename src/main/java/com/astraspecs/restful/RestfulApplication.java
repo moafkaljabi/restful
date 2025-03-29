@@ -10,7 +10,5 @@ public class RestfulApplication {
 		SpringApplication.run(RestfulApplication.class, args);
 	}
 
-//	FirstController firstController;
-//
-//	firstController.sayHello();
+
 }
