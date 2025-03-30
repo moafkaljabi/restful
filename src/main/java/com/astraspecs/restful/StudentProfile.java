@@ -1,8 +1,6 @@
 package com.astraspecs.restful;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 
@@ -10,9 +8,16 @@ public class StudentProfile {
 
     @Id
     @GeneratedValue
-    public Integer id;
+    private Integer id;
 
-    public String bio;
+    private String bio;
+
+    @OneToOne
+    @JoinColumn(
+            name = "student_id"
+    )
+    private Student student;
+
 
     public StudentProfile() {
     }

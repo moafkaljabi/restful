@@ -27,6 +27,13 @@ public class Student {
     private int age;
 
 
+    @OneToOne(
+            mappedBy = "student",
+            cascade = CascadeType.ALL
+    )
+    private StudentProfile studentProfile;
+
+
     public Student() {
     }
 
