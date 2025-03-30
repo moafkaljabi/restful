@@ -1,8 +1,12 @@
 package com.astraspecs.restful;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
 public class School {
@@ -13,6 +17,11 @@ public class School {
 
     public String name;
 
+    @OneToMany(
+            mappedBy = "school"
+    )
+    @JsonManagedReference // tells jackson that the parent(school) is responsible of serializing the child(student)
+    private List<Student> students;
 
     public School() {
     }
