@@ -1,4 +1,4 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

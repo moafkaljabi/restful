@@ -1,5 +1,6 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.school;
 
+import com.astraspecs.restful.student.Student;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

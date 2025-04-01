@@ -1,5 +1,6 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.student;
 
+import com.astraspecs.restful.school.School;
 import org.springframework.stereotype.Service;
 
 @Service

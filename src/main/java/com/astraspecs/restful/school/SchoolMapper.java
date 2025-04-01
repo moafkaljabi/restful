@@ -1,4 +1,4 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.school;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,8 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.student;
 
 
+import com.astraspecs.restful.studentProfile.StudentProfile;
+import com.astraspecs.restful.school.School;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 

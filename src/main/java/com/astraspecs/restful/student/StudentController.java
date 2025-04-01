@@ -5,12 +5,16 @@
 * */
 
 
-package com.astraspecs.restful;
+package com.astraspecs.restful.student;
 
 
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -29,7 +33,7 @@ public class StudentController {
     @PostMapping("/students")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public StudentResponseDTO saveStudent(
-            @RequestBody StudentDTO studentDTO
+        @Valid @RequestBody StudentDTO studentDTO
     ){
         return this.studentService.saveStudent(studentDTO);
     }
@@ -64,4 +68,17 @@ public class StudentController {
     ){
         this.studentService.delete(id);
     }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<?> handleMethodArgumentNotValidException(
+            MethodArgumentNotValidException exp
+    ){
+        var errors = new HashMap<String /* field name */ ,/* message name */ String>();
+        exp.getBindingResult().getAllErrors()
+                .forEach(error -> {
+                    
+                });
+    }
+
 }

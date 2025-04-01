@@ -1,8 +1,7 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.school;
 
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -34,7 +33,7 @@ public class SchoolService {
     public List<SchoolDTO> findAll(){
         return schoolRepository.findAll()
                 .stream()
-                .map(SchoolMapper::toSchoolDTO)
+                .map(schoolMapper::toSchoolDTO)
                 .collect(Collectors.toList());
 
     }

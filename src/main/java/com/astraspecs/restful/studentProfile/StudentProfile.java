@@ -1,5 +1,6 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.studentProfile;
 
+import com.astraspecs.restful.student.Student;
 import jakarta.persistence.*;
 
 @Entity

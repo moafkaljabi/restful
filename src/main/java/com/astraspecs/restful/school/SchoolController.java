@@ -1,4 +1,4 @@
-package com.astraspecs.restful;
+package com.astraspecs.restful.school;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 
@@ -25,14 +24,14 @@ public class SchoolController {
     public SchoolDTO create(
             @RequestBody SchoolDTO schoolDTO
     ){
-        return this.schoolService.create(schoolDTO) ;
+        return schoolService.create(schoolDTO) ;
     }
 
 
 
     @GetMapping("/schools")
     public List<SchoolDTO> findAll(){
-        return this.schoolService.findAll();
+        return schoolService.findAll();
 
     }
 
