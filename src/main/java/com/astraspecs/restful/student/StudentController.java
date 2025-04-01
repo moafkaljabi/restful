@@ -10,7 +10,9 @@ package com.astraspecs.restful.student;
 
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
@@ -77,8 +79,12 @@ public class StudentController {
         var errors = new HashMap<String /* field name */ ,/* message name */ String>();
         exp.getBindingResult().getAllErrors()
                 .forEach(error -> {
-                    
+                    var fieldName = ((FieldError) error ).getField();
+                    var errorMessage = error.getDefaultMessage();
+
+                    errors.put(fieldName,errorMessage);
                 });
+        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 
 }
